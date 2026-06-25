@@ -1,0 +1,329 @@
+# NC²AN-X FINAL SLIDE CONTENT
+## Direct Source-of-Truth Documents: NC²AN-X Ideathon Story Bible v1.0 + NC²AN-X PPT Content Bible
+### ISRO BAH 2026 | Challenge 15 | Slide 2 (Team) intentionally omitted — completed manually
+
+---
+
+# Slide 1 — Title
+
+## Slide Objective
+Establish identity and precise problem-fit before any other content is read. The project's full working name includes "Multi-Payload Space Weather Intelligence," which is roadmap-stage ambition per the Story Bible's SWIS-ASPEX note — that framing is deliberately withheld from this slide and reserved for Slide 3's closing line and Slide 9, so the title slide makes no claim wider than what's actually being submitted.
+
+## Core Message
+This project answers Challenge 15's exact requirement: combined Hard and Soft X-ray flare forecasting using Aditya-L1.
+
+## Content to Display
+**Title:** NC²AN-X
+**Subtitle:** Neupert-Constrained Cross-Attention Network for Solar Flare Forecasting using Aditya-L1
+**Problem Statement:** Forecasting and Nowcasting of Solar Flares using combined Soft and Hard X-ray data from Aditya-L1 — Challenge 15, Bharatiya Antariksh Hackathon 2026.
+**Positioning line:** A physics-constrained forecasting system built directly from Aditya-L1's own Hard X-ray and Soft X-ray instruments.
+
+## Visual Layout Recommendation
+Template hero graphic fills the upper portion as fixed art. Below it, left-aligned: project codename in the largest type on the slide, subtitle directly beneath in smaller type. The problem statement sits on its own line, set apart with a thin rule above it so it reads as a quotation of the official brief rather than team-authored copy. Team name and leader name occupy the lowest, smallest-weight line. No competing visual elements — this slide is text-led by design.
+
+## Graphic Labels
+No diagram on this slide. Field labels only: "Problem Statement," "Team Name," "Team Leader Name."
+
+## Figure Captions
+Not applicable — no chart, heatmap, or diagram appears on this slide.
+
+## Information Hierarchy
+**Primary:** project codename, problem statement. **Secondary:** subtitle. **Tertiary:** team name, leader name.
+
+## Judge Takeaway
+This team built their solution directly around the challenge as written, not around a generic idea retrofitted to fit it.
+
+## Transition
+Having established what the project answers, the next slide establishes who is answering it.
+
+---
+
+# Slide 3 — Opportunity / USP
+
+## Slide Objective
+The highest-risk, highest-reward slide in the deck. Its job is to deliver the core differentiation honestly — earning the "that's actually clever" reaction without crossing into overclaiming. The Hard=Query / Soft=Key,Value mapping must appear once, in plain language; no unscoped superlative survives; the single national-impact line for the entire deck closes this slide.
+
+## Core Message
+NC²AN doesn't predict flares — it watches the Sun's own causal handoff from hard to soft X-rays and predicts from that.
+
+## Content to Display
+**Headline:** Cross-attention as physics, not metaphor.
+**Insight line:** NC²AN doesn't predict flares — it watches the Sun's own causal handoff from hard to soft X-rays and predicts from that.
+**Comparison — typical approach:** Hard and Soft X-ray data stacked as parallel input channels; the relationship between them is left for the model to discover.
+**Comparison — NC²AN:** Hard X-ray queries Soft X-ray's history directly. The architecture asks the same question the Neupert effect already answers.
+**USP line:** Most flare-forecasting work relies on photospheric magnetograms. NC²AN is built from Aditya-L1's own paired X-ray instruments, with cross-attention structurally bound to a named physical relationship.
+**Closing line:** Earlier, physically-grounded forecasts mean longer lead time for satellite operators — a first step toward a national space-weather advisory capability.
+
+## Visual Layout Recommendation
+Center-top: the insight line, the largest type on the slide. Below it, a two-column comparison graphic — left column "Typical Approach," right column "NC²AN" — separated by a single divider or arrow rather than a table grid. The USP line runs full-width beneath the comparison, smaller type. The closing line sits at the bottom, set apart by a thin top rule so it reads as a deliberate final beat rather than a continuation of the technical point above it.
+
+## Graphic Labels
+Left column header: "Typical Approach." Right column header: "NC²AN." Left column body: "Hard + Soft X-ray as stacked input channels." Right column body: "Hard X-ray = Query, Soft X-ray = Key / Value." Caption beneath comparison: "Same two instruments. A different question being asked of them."
+
+## Figure Captions
+"Most approaches combine Hard and Soft X-ray data as parallel inputs. NC²AN's cross-attention layer makes one instrument query the other directly, mirroring the Neupert effect's causal structure."
+
+## Information Hierarchy
+**Primary:** the insight line. **Secondary:** the two-path comparison and the Query/Key-Value mapping. **Tertiary:** the closing national-impact line.
+
+## Judge Takeaway
+The architecture's central operation is a direct, structural answer to the Neupert effect — not a generic attention mechanism applied to space data.
+
+## Transition
+That same physical relationship, once established as the model's foundation, translates into a concrete set of operational capabilities.
+
+---
+
+# Slide 4 — Features
+
+## Slide Objective
+Translate the architecture into operator-facing capability. Six items, equal weight, zero internals exposed. Ordered by operational value to a forecaster, not by build order. NDI's "flags non-textbook flares" framing is the standout item on this slide.
+
+## Core Message
+NC²AN is useful to a forecaster today, not just clever in a research sense.
+
+## Content to Display
+**Header:** What the System Delivers
+1. **Multi-Horizon Forecasts** — 1, 6, 12, and 24 hours ahead, from one shared model.
+2. **Calibrated Uncertainty** — every forecast carries a confidence band, not a bare probability.
+3. **Causal Transfer Energy View** — a live picture of energy moving from hard to soft X-ray.
+4. **Neupert Deviation Index** — flags flares whose behavior departs from the expected physical pattern.
+5. **Continuous Low-Power Monitoring** — the system watches quietly and escalates only when triggered.
+6. **Catalog-Validated Accuracy** — every forecast is checked against the NOAA flare record.
+
+## Visual Layout Recommendation
+Six-item icon grid (3×2 or single row), equal visual weight throughout — this slide is an inventory, not a single insight, so no item should dominate. Each item: icon above, one-line label and short description below. Header line runs full-width above the grid.
+
+## Graphic Labels
+Icon captions, one per item, matching the six labels above exactly: "Multi-Horizon Forecast," "Calibrated Uncertainty," "CTE View," "NDI Alert," "Continuous Monitoring," "Catalog-Validated."
+
+## Figure Captions
+Not applicable — icon grid only, no chart or diagram.
+
+## Information Hierarchy
+**Primary:** all six capability labels, intentionally presented as equal-weight. **Secondary:** the one-line description beneath each. **Tertiary:** none.
+
+## Judge Takeaway
+Every capability on this slide maps to something a real space-weather forecaster would act on, not just a model output.
+
+## Transition
+Delivering these capabilities depends on a data path that stays simple even as the physics underneath it stays precise.
+
+---
+
+# Slide 5 — Process Flow / Use-Case Diagram
+
+## Slide Objective
+Prove the system is an elegant pipeline a judge can trace in seconds — narrated as the Sun's physics moving through the system, not as software moving through the system. Six boxes maximum; no internal preprocessing detail.
+
+## Core Message
+Sun to alert, in one clean line.
+
+## Content to Display
+**Diagram heading:** From Solar Event to Operational Alert
+1. **Magnetic Reconnection** — energy builds and releases at the Sun's surface.
+2. **Hard X-ray Burst (HEL1OS)** — accelerated electrons strike the chromosphere.
+3. **Energy Transfer — Neupert Effect** — heating drives plasma upward.
+4. **Soft X-ray Response (SoLEXS)** — the chromosphere glows, seconds to tens of seconds later.
+5. **NC²AN Forecast** — cross-attention models the handoff; multi-horizon prediction is generated.
+6. **Operator Alert** — forecast and uncertainty reach the dashboard.
+
+## Visual Layout Recommendation
+Single horizontal flow, left to right, six equal-sized boxes connected by simple arrows. Boxes 1–4 (the physical process) share one visual treatment; boxes 5–6 (the system's response) share a distinct second treatment, so the diagram separates "what the Sun does" from "what the system does" without requiring a legend. No branching, no feedback loops shown.
+
+## Graphic Labels
+Box titles exactly as the six stage labels above. Arrow labels: between boxes 2–3, "seconds"; between 3–4, "lag interval"; between 4–5, "model input"; between 5–6, "forecast output."
+
+## Figure Captions
+"The same physical sequence that produces a solar flare — reconnection, hard X-ray emission, energy transfer, soft X-ray response — is the sequence NC²AN's architecture is built to track."
+
+## Information Hierarchy
+**Primary:** the six-stage sequence itself. **Secondary:** the physical-vs-system visual split. **Tertiary:** none — no sub-detail is shown on this slide by design.
+
+## Judge Takeaway
+The pipeline's simplicity reflects the physics, not a simplification of the engineering.
+
+## Transition
+Turning this flow into something an operator actually watches in real time is the next slide's job.
+
+---
+
+# Slide 6 — Wireframes / Mockups
+
+## Slide Objective
+Make the system tangible through one dominant visual — the CTE heatmap — supported by two or three smaller panels. NDI gauge and multi-horizon bars are demoted to secondary elements, not presented as equal panels.
+
+## Core Message
+This is the screen that explains itself.
+
+## Content to Display
+**Panel header:** Operational Forecast Dashboard
+**Dominant panel title:** Causal Transfer Energy — Live View
+**Dominant panel caption:** Visualizes where hard X-ray energy is currently aligning with soft X-ray response.
+**Supporting panel 1 title:** Flux Monitor — Hard and Soft X-ray, with forecast uncertainty band.
+**Supporting panel 2 title:** Alert Status — current flare probability and Neupert Deviation Index.
+**Footer label:** Forecast Horizon: 1h / 6h / 12h / 24h
+
+## Visual Layout Recommendation
+The CTE heatmap occupies the largest, most central area of the slide. The flux-monitor panel sits directly below or beside it as the second-largest element. The alert-status strip runs along the bottom edge, compact and status-differentiated. Multi-horizon labels and the NDI gauge appear as small secondary elements within the alert strip, not as separate equal-sized panels.
+
+## Graphic Labels
+Heatmap axes: x-axis "Time," y-axis "Attention Weight (Hard → Soft)." Heatmap legend: "Low" to "High" energy-transfer alignment. Flux-monitor legend: "Hard X-ray," "Soft X-ray," "Forecast (shaded = uncertainty)." Alert-strip labels: "Flare Probability," "NDI Status."
+
+## Figure Captions
+"The heatmap traces the same hard-to-soft X-ray alignment the cross-attention layer computes internally; a diagonal band indicates a flare following the expected Neupert pattern."
+"The flux monitor displays observed Hard and Soft X-ray channels alongside the model's forecast and its uncertainty band, not a single point estimate."
+
+## Information Hierarchy
+**Primary:** the CTE heatmap. **Secondary:** the flux-and-uncertainty panel. **Tertiary:** the alert strip, NDI gauge, and multi-horizon labels.
+
+## Judge Takeaway
+The dashboard is designed around what a duty officer would need to see first during a live event, not around whatever the model happens to output.
+
+## Transition
+Behind this interface sits the architecture responsible for producing it.
+
+---
+
+# Slide 7 — Architecture Diagram
+
+## Slide Objective
+Prove technical rigor in six macro-blocks, each physics- or operationally-justified, without exposing internals reserved for Q&A (Isolation Forest, λ-annealing, GOES cross-calibration internals stay off this slide). The Hard→Query, Soft→Key/Value labeling must be explicit and visible.
+
+## Core Message
+Every block exists because of physics, not trend.
+
+## Content to Display
+**Diagram heading:** NC²AN Architecture
+1. **Data Engineering** — Hard Flux, Soft Flux, H/S Ratio, dSoft/dt, Energy Proxy.
+2. **Dual Encoders** — separate Hard and Soft X-ray representations.
+3. **Cross-Attention Core** — Hard X-ray = Query, Soft X-ray = Key / Value.
+4. **Neupert Loss** — constrains the model to the physical relationship, not just the label.
+5. **Diagnostics** — Causal Transfer Energy (CTE), Neupert Deviation Index (NDI).
+6. **Forecast Head** — 1h / 6h / 12h / 24h probability with calibrated uncertainty.
+
+## Visual Layout Recommendation
+Left-to-right layered diagram, mirroring Slide 5's flow direction for visual continuity. The Cross-Attention Core (block 3) is the visually largest or most centrally emphasized block — it is the architectural heart. Group blocks 1–2 under a band labeled "Input," blocks 3–4 under "Physics-Constrained Core," and blocks 5–6 under "Output."
+
+## Graphic Labels
+Band labels: "Input," "Physics-Constrained Core," "Output." Block titles exactly as listed above. Arrow label between blocks 2–3: "Hard → Query, Soft → Key/Value." Arrow label between 3–4: "attention output constrained." Arrow label between 4–5: "diagnostic byproducts." Arrow label between 5–6: "final forecast."
+
+## Figure Captions
+"Six macro-components, each tied to either a physical mechanism (the Neupert effect) or an operational requirement (multi-horizon forecasting); internal preprocessing and calibration steps are omitted here and available on request."
+
+## Information Hierarchy
+**Primary:** Cross-Attention Core, Neupert Loss. **Secondary:** Data Engineering, Diagnostics. **Tertiary:** Forecast Head — operationally important but architecturally the most conventional component.
+
+## Judge Takeaway
+The model's central computation is a direct implementation of the Neupert effect's query-and-answer structure, not a generic Transformer applied to satellite data.
+
+## Transition
+Realizing this architecture requires a specific, deliberately modest technology stack.
+
+---
+
+# Slide 8 — Technologies
+
+## Slide Objective
+Establish concrete, checkable credibility with zero new excitement and zero contradiction with Slide 7. One framework, named consistently — TensorFlow/Keras, matching the project's actual model-export format, resolving the inconsistency flagged in the source documents.
+
+## Core Message
+Production-appropriate, ISRO-compatible.
+
+## Content to Display
+**Header:** Technology Stack
+**Data Engineering:** Astropy, SciPy, NumPy — FITS parsing, GTI filtering, scaling.
+**Modeling:** TensorFlow / Keras — encoders, cross-attention, Neupert loss.
+**Serving:** FastAPI — inference endpoint.
+**Dashboard:** Streamlit, Plotly — operational interface.
+**Data Source:** Aditya-L1 via PRADAN / ISSDC; GOES archive for pre-training.
+
+## Visual Layout Recommendation
+Flat horizontal row or simple grid, grouped into the five stage labels above, tool names listed beneath each. No single dominant element — equal visual weight throughout, consistent with this slide's deliberately low-key role.
+
+## Graphic Labels
+Stage headers exactly as the five labels above: "Data Engineering," "Modeling," "Serving," "Dashboard," "Data Source." No legend required — a flat inventory, not a diagram with relationships to decode.
+
+## Figure Captions
+Not applicable — a grouped tool listing, no chart or diagram.
+
+## Information Hierarchy
+Intentionally flat. All five groupings carry equal weight; no primary/secondary/tertiary distinction applies to this slide.
+
+## Judge Takeaway
+Nothing about the stack should raise a question — it should simply confirm the architecture shown on the previous slide is buildable with named, real tools.
+
+## Transition
+A stack this lightweight also keeps the system inexpensive to build and to run.
+
+---
+
+# Slide 9 — Estimated Implementation Cost
+
+## Slide Objective
+Signal frugality and feasibility together using relative comparisons rather than fabricated absolute figures. The national-impact roadmap closes this slide as a single line, not as a separate visual element.
+
+## Core Message
+Low-cost, high-rigor.
+
+## Content to Display
+**Header:** Built to Run Lean
+**Training:** Single-GPU training cycle — no large-scale compute cluster required.
+**Inference:** Real-time-capable on modest hardware; CUSUM-gated monitoring keeps the system idle and low-cost most of the time, escalating only when triggered.
+**Licensing:** Fully open-source stack — no licensing cost.
+**Roadmap line:** The same lightweight approach extends naturally toward a broader space-weather advisory capability as Aditya-L1's data record grows.
+
+## Visual Layout Recommendation
+Left side: a relative comparison graphic — "NC²AN (sentinel mode)" against a generic "typical continuous ML pipeline" — shown as two bars or columns differing mainly in inference/monitoring cost, not training cost. Right side or bottom strip: the three cost-category labels as short text blocks. The roadmap line sits at the very bottom, set apart as a closing note rather than a fourth cost category.
+
+## Graphic Labels
+Comparison graphic labels: "NC²AN (sentinel mode)" vs. "Typical continuous pipeline." Scale label: "Relative Operating Cost" (no absolute units shown). Category labels: "Training," "Inference," "Licensing."
+
+## Figure Captions
+"Relative comparison only; reflects the CUSUM-gated design that keeps the system idle between trigger events rather than running continuous full inference."
+
+## Information Hierarchy
+**Primary:** the relative cost comparison and the CUSUM-driven inference savings. **Secondary:** training and licensing notes. **Tertiary:** the roadmap closing line.
+
+## Judge Takeaway
+The system's low operating cost is a direct consequence of its design, not a separate claim added afterward.
+
+## Transition
+That same frugal, physics-grounded design is the foundation the team is ready to build on, starting now.
+
+---
+
+# Slide 10 — Thank You
+
+## Slide Objective
+Close cleanly and confidently with no new claims, leaving the team ready for the two questions almost certain to come first: the cross-attention-versus-Transformer question (Slide 7) and the data-scarcity question (Section 9 of the PPT Content Bible).
+
+## Core Message
+Thank you — the team is ready for questions.
+
+## Content to Display
+**Header:** Thank You
+**Line:** NC²AN-X — Neupert-Constrained Cross-Attention Network for Solar Flare Forecasting using Aditya-L1
+**Contact line:** Team Name / Team Leader Name / Contact details (per template fields)
+
+## Visual Layout Recommendation
+The template's fixed closing art occupies the dominant visual space. Project name and one-line descriptor sit centered beneath it, small and understated. Contact details sit at the very bottom, smallest weight.
+
+## Graphic Labels
+None — no diagram on this slide.
+
+## Figure Captions
+Not applicable.
+
+## Information Hierarchy
+**Primary:** "Thank You." **Secondary:** project name and descriptor. **Tertiary:** contact details.
+
+## Judge Takeaway
+The team closed with the same precision it opened with — no new claims, no overreach, just confidence.
+
+## Transition
+Final slide — no transition required; the floor opens to questions.
+
+---
+
+*Every claim above traces to the Story Bible or the PPT Content Bible. Where those documents flagged a risk, an inconsistency, or a limit (the framework choice, the scope of "Multi-Payload," the boundaries of NDI's claim), this document resolves it rather than silently repeating it.*
