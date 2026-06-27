@@ -1,0 +1,25 @@
+NC²AN Hyperparameter Search
+======================================================================
+
+Trial ID                : 4
+Embed Dimension         : 96
+Number of Heads         : 4
+Dropout Rate            : 0.2
+Learning Rate           : 2e-04
+Neupert Lambda          : 0.5
+Pooling Type            : average
+Position Encoding       : rope
+
+Validation Metrics
+----------------------------------------------------------------------
+Validation Loss         : 0.294542
+Forecast Loss           : 0.244009
+Physics Loss            : 0.016186
+NDI                     : 0.589898
+F1 Score                : 0.916828
+ROC-AUC                 : 0.996311
+Best Epoch              : 6
+
+Recommended Constructor
+----------------------------------------------------------------------
+model = NC2AN_Model(embed_dim=96, num_heads=4, dropout_rate=0.2, position_encoding_type='rope', pooling_type='average')

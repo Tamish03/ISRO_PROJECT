@@ -1,0 +1,21 @@
+{
+    "trial_id": 4,
+    "config": {
+        "embed_dim": 96,
+        "num_heads": 4,
+        "dropout_rate": 0.2,
+        "learning_rate": 0.0002,
+        "lambda_neupert": 0.5,
+        "pooling_type": "average",
+        "position_encoding_type": "rope"
+    },
+    "best_val_loss": 0.29454186255181275,
+    "val_forecast_loss": 0.2440092037173195,
+    "val_data_loss": 0.04243986765612607,
+    "val_physics_loss": 0.01618556966315265,
+    "val_ndi": 0.5898981046069551,
+    "val_f1": 0.9168278529980658,
+    "val_auc": 0.9963111801848632,
+    "best_epoch": 6,
+    "ckpt_path": "/kaggle/working/nc2an_hp_search/trial_04.weights.h5"
+}

@@ -1,0 +1,212 @@
+[
+    {
+        "trial_id": 4,
+        "config": {
+            "embed_dim": 96,
+            "num_heads": 4,
+            "dropout_rate": 0.2,
+            "learning_rate": 0.0002,
+            "lambda_neupert": 0.5,
+            "pooling_type": "average",
+            "position_encoding_type": "rope"
+        },
+        "best_val_loss": 0.29454186255181275,
+        "val_forecast_loss": 0.2440092037173195,
+        "val_data_loss": 0.04243986765612607,
+        "val_physics_loss": 0.01618556966315265,
+        "val_ndi": 0.5898981046069551,
+        "val_f1": 0.9168278529980658,
+        "val_auc": 0.9963111801848632,
+        "best_epoch": 6,
+        "ckpt_path": "/kaggle/working/nc2an_hp_search/trial_04.weights.h5"
+    },
+    {
+        "trial_id": 5,
+        "config": {
+            "embed_dim": 96,
+            "num_heads": 4,
+            "dropout_rate": 0.2,
+            "learning_rate": 0.0005,
+            "lambda_neupert": 0.2,
+            "pooling_type": "attention",
+            "position_encoding_type": "rope"
+        },
+        "best_val_loss": 0.2989825898160537,
+        "val_forecast_loss": 0.22303236084418906,
+        "val_data_loss": 0.07099881311188694,
+        "val_physics_loss": 0.024757070001214743,
+        "val_ndi": 1.3439847364745758,
+        "val_f1": 0.9118773946360154,
+        "val_auc": 0.9962689619323294,
+        "best_epoch": 9,
+        "ckpt_path": "/kaggle/working/nc2an_hp_search/trial_05.weights.h5"
+    },
+    {
+        "trial_id": 2,
+        "config": {
+            "embed_dim": 64,
+            "num_heads": 4,
+            "dropout_rate": 0.2,
+            "learning_rate": 0.0002,
+            "lambda_neupert": 0.2,
+            "pooling_type": "attention",
+            "position_encoding_type": "rope"
+        },
+        "best_val_loss": 0.2998015202788843,
+        "val_forecast_loss": 0.25621151578121093,
+        "val_data_loss": 0.03872007636905268,
+        "val_physics_loss": 0.024349647004985146,
+        "val_ndi": 1.0003154882126384,
+        "val_f1": 0.9018867924528302,
+        "val_auc": 0.9958071997952415,
+        "best_epoch": 9,
+        "ckpt_path": "/kaggle/working/nc2an_hp_search/trial_02.weights.h5"
+    },
+    {
+        "trial_id": 9,
+        "config": {
+            "embed_dim": 64,
+            "num_heads": 4,
+            "dropout_rate": 0.4,
+            "learning_rate": 0.0005,
+            "lambda_neupert": 0.3,
+            "pooling_type": "attention",
+            "position_encoding_type": "rope"
+        },
+        "best_val_loss": 0.30740377217255255,
+        "val_forecast_loss": 0.24474657927553548,
+        "val_data_loss": 0.056764854583889246,
+        "val_physics_loss": 0.019641115243926092,
+        "val_ndi": 0.6215352874111246,
+        "val_f1": 0.9063670411985019,
+        "val_auc": 0.9960974502814111,
+        "best_epoch": 4,
+        "ckpt_path": "/kaggle/working/nc2an_hp_search/trial_09.weights.h5"
+    },
+    {
+        "trial_id": 1,
+        "config": {
+            "embed_dim": 64,
+            "num_heads": 8,
+            "dropout_rate": 0.2,
+            "learning_rate": 0.001,
+            "lambda_neupert": 0.3,
+            "pooling_type": "average",
+            "position_encoding_type": "rope"
+        },
+        "best_val_loss": 0.3090488487440679,
+        "val_forecast_loss": 0.2534594814906423,
+        "val_data_loss": 0.04886711633729714,
+        "val_physics_loss": 0.02240750676503888,
+        "val_ndi": 1.0996429658046476,
+        "val_f1": 0.9177330895795247,
+        "val_auc": 0.9955037561051552,
+        "best_epoch": 7,
+        "ckpt_path": "/kaggle/working/nc2an_hp_search/trial_01.weights.h5"
+    },
+    {
+        "trial_id": 6,
+        "config": {
+            "embed_dim": 64,
+            "num_heads": 8,
+            "dropout_rate": 0.2,
+            "learning_rate": 0.0002,
+            "lambda_neupert": 0.5,
+            "pooling_type": "average",
+            "position_encoding_type": "rope"
+        },
+        "best_val_loss": 0.32173984097661795,
+        "val_forecast_loss": 0.23750096197343534,
+        "val_data_loss": 0.07568674463847722,
+        "val_physics_loss": 0.017104266452844494,
+        "val_ndi": 0.4102922422742402,
+        "val_f1": 0.9077212806026366,
+        "val_auc": 0.9960868957182776,
+        "best_epoch": 10,
+        "ckpt_path": "/kaggle/working/nc2an_hp_search/trial_06.weights.h5"
+    },
+    {
+        "trial_id": 10,
+        "config": {
+            "embed_dim": 128,
+            "num_heads": 8,
+            "dropout_rate": 0.3,
+            "learning_rate": 0.0002,
+            "lambda_neupert": 0.3,
+            "pooling_type": "attention",
+            "position_encoding_type": "rope"
+        },
+        "best_val_loss": 0.35373862748275753,
+        "val_forecast_loss": 0.27321439025345845,
+        "val_data_loss": 0.07536058892771878,
+        "val_physics_loss": 0.017212159948906413,
+        "val_ndi": 0.8667183106558191,
+        "val_f1": 0.9080882352941176,
+        "val_auc": 0.9951712873664518,
+        "best_epoch": 8,
+        "ckpt_path": "/kaggle/working/nc2an_hp_search/trial_10.weights.h5"
+    },
+    {
+        "trial_id": 8,
+        "config": {
+            "embed_dim": 128,
+            "num_heads": 8,
+            "dropout_rate": 0.2,
+            "learning_rate": 0.0005,
+            "lambda_neupert": 0.3,
+            "pooling_type": "average",
+            "position_encoding_type": "rope"
+        },
+        "best_val_loss": 0.364913040737587,
+        "val_forecast_loss": 0.28446833524611537,
+        "val_data_loss": 0.0749752100005194,
+        "val_physics_loss": 0.018231655091599182,
+        "val_ndi": 0.3622114208561403,
+        "val_f1": 0.9023941068139963,
+        "val_auc": 0.9956541586298067,
+        "best_epoch": 2,
+        "ckpt_path": "/kaggle/working/nc2an_hp_search/trial_08.weights.h5"
+    },
+    {
+        "trial_id": 7,
+        "config": {
+            "embed_dim": 64,
+            "num_heads": 4,
+            "dropout_rate": 0.4,
+            "learning_rate": 0.0002,
+            "lambda_neupert": 0.5,
+            "pooling_type": "attention",
+            "position_encoding_type": "rope"
+        },
+        "best_val_loss": 0.39073434892903874,
+        "val_forecast_loss": 0.2789887701963178,
+        "val_data_loss": 0.10776879079639912,
+        "val_physics_loss": 0.007953575989059,
+        "val_ndi": 0.11046676989644766,
+        "val_f1": 0.9053803339517625,
+        "val_auc": 0.9958362248438585,
+        "best_epoch": 7,
+        "ckpt_path": "/kaggle/working/nc2an_hp_search/trial_07.weights.h5"
+    },
+    {
+        "trial_id": 3,
+        "config": {
+            "embed_dim": 96,
+            "num_heads": 4,
+            "dropout_rate": 0.3,
+            "learning_rate": 0.0002,
+            "lambda_neupert": 0.3,
+            "pooling_type": "attention",
+            "position_encoding_type": "rope"
+        },
+        "best_val_loss": 0.4042950798584907,
+        "val_forecast_loss": 0.3418419072965022,
+        "val_data_loss": 0.057033795259754966,
+        "val_physics_loss": 0.018064590481420357,
+        "val_ndi": 0.6178944289546322,
+        "val_f1": 0.8809073724007561,
+        "val_auc": 0.9933242388181001,
+        "best_epoch": 7,
+        "ckpt_path": "/kaggle/working/nc2an_hp_search/trial_03.weights.h5"
+    }
+]
