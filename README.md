@@ -2,7 +2,7 @@
 
 A multimodal deep learning architecture that fuses **Hard X-Ray (HXR)** and **Soft X-Ray (SXR)** solar emission time-series through cross-modal attention, enforces solar physics (the **Neupert effect**) as a differentiable loss term, and forecasts flare risk across **four time horizons** (1h / 6h / 12h / 24h).
 
-> *Project name is a placeholder — rename freely to match your repo.*
+> *Project name : NC2AN*
 
 ---
 
