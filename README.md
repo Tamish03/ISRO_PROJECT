@@ -1,4 +1,4 @@
-# 🌞 NeupertNet — Physics-Informed Cross-Attention Network for Solar Flare Forecasting
+# 🌞 NC2AN — Physics-Informed Cross-Attention Network for Solar Flare Forecasting
 
 A multimodal deep learning architecture that fuses **Hard X-Ray (HXR)** and **Soft X-Ray (SXR)** solar emission time-series through cross-modal attention, enforces solar physics (the **Neupert effect**) as a differentiable loss term, and forecasts flare risk across **four time horizons** (1h / 6h / 12h / 24h).
 
@@ -211,10 +211,7 @@ Inferred from the pipeline (`GradientTape`, `Adam`):
 - Vaswani et al. (2017), *Attention Is All You Need* — transformer / scaled dot-product attention.
 - Su, J. et al. (2021), *RoFormer* — Rotary Position Embedding (RoPE).
 
-## License
-
-*(Add your preferred license, e.g. MIT, Apache 2.0.)*
 
 ---
 
-**Author:** Tamish
+**Author:** Sarthak Bhide
