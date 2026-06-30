@@ -1,0 +1,200 @@
+In our NC2AN Project : 
+    1- We have discarded the use of Sinusoidal Positional Embeddings 
+    #Why ? Suppose we have our reading of Hard X Rays and Soft X rays for a particle.
+        At time t=1, we have the reading H1 and S1--> Adding the information of its Position 
+        At time t=2, we have the reading H2 and S2--> Adding the information of its Position 
+
+    #Consequences : In order to add the semantic embeddings + Positional embeddings -> We tend to pollute the semmantic meaning 
+    # No ISRO scientist or person would like to change the readings even a little bit in such a complex and important task 
+    # Hence we have neglected the idea of Positional Sinusoidal Encodings 
+
+
+    2- Foundation : 
+        # We are adding the positional embeddings with the semantic embeddings earlier 
+        #In order to preserve the semantic ,why cant we directly add the positional meaning in the Multi-Head Attention Block ?
+        #The answer is: Yes why not but how ? without disturbing the actual semantic meaning ??? 
+
+
+    3- Embeddings : 
+        # We have captured the semantic meaning in the formed of embeddings and the DataType is : Vector 
+        #  Vector : 1-> Magnitude , 2-> Direction 
+        # Idea :  Why not give the direction as the Positional Information ???
+        #How :  Lets keep the magnitude of vector same and Let's rotate the Vector by an angle of theta , such that it gives the information of the position  
+
+        
+        
+    4- RoPE(Rotary Positional Encodings): The main idea is to take Query and Key vectors and apply sin and cosine positional encodings to these vectors...
+        #Demonstration : 
+            #Example : The dog chased the another dog 
+            #Notice : dog appears twice ,and without RoPE dog(first)= dog(second)
+
+            E1(The):       [0.2,0.5,0.1,0.4]
+            E2(dog):       [1.0,0.6,0.8,0.2]
+            E3(chased):    [0.4,1.1,0.9,0.3]
+            E4(another):   [0.6,0.2,0.4,0.9]
+            E5(dog):       [1.0 0.6,0.8,0.2] 
+
+            WQ: [1.0,0.2,0.0,0.1]
+                [0.1,1.0,0.3,0.0]
+                [0.0,0.2,1.0,0.1]
+                [0.1,0.0,0.2,1.0]
+
+            WK: [0.9,0.1,0.2,0.0]
+                [0.0,1.0,0.1,0.2]
+                [0.1,0.2,0.9,0.0]
+                [0.2,0.0,0.1,1.0]
+
+            WV: [1.0,0.0,0.0,0.0]
+                [0.0,1.0,0.0,0.0]
+                [0.0,0.0,1.0,0.0]
+                [0.0,0.0,0.0,0.1]
+
+
+            Q1: [0.29,0.56,0.33,0.43]
+            Q2: [1.08,0.96,1.02,0.40]
+            Q3: [0.54,1.36,1.29,0.52]
+            Q4: [0.71,0.40,0.64,1.00]
+            Q5: [1.08,0.96,1.02,0.40]  since Q2= Q5
+
+            K1:[0.27,0.54,0.20,0.50]
+            K2:[0.98,0.86,1.00,0.32]
+            K3:[0.51,1.02,1.01,0.52]
+            K4:[0.76,0.34,0.59,0.94]
+            K5:[0.98,0.86,1.00,0.32] since K2=K5
+
+            V1: [0.2,0.5,0.1,0.4]
+            V2: [1.0,0.6,0.8,0.2]
+            V3: [0.4,1.1,0.9,0.3]
+            V4: [0.6,0.2,0.4,0.9]
+            V5: [1.0,0.6,0.8,0.2] since V2=V5
+
+        #Currently (Q2 and K2) and (Q5 and K5) vectors only know the semantic meaning ,They do not know this is the Second and Fifth  Word 
+        # Lest Deep dive into Q2 and K2 : 
+             Q2 : [1.08,0.96,1.02,0.40]--> Pair 1 :[1.08,0.96] --> Pair 2 :[1.02,0.40]
+             K2 : [0.98,0.86,1.00,0.32]--> Pair 1 :[0.98,0.86] --> Pair 2 :[1.00,0.32]
+
+             Theta : Frequency*Position = position/1000^(2i/d) where d=4 
+             Pair 1 : i=0 so , Theta= position 
+             Pair 2 : i=1 so , Theta= position/100
+
+             For Q2 and K2 ,Position =1 
+             Theta(0)= 1 rad --> Rotational angle
+             Theta(1)= 0.01 rad --> Rotational angle 
+
+             For Theta(0) in Pair 1:
+                cos(1)= 0.5403
+                sin(1)= 0.8415
+
+             For Theta(1) in Pair 2:
+                cos(0.01)= 0.99995
+                sin(0.01)= 0.00999
+
+            Rotational Formula :
+                x'= xcos - ysin 
+                y'= xsin + ycos 
+
+            For Pair 1 : 
+                x1'= (1.08*0.5403 - 0.96*0.8415)  =-0.225
+                y1'= (1.08*0.8415 + 0.96*0.5403)  =1.427 
+
+            For Pair 2 :
+                x2'= (1.02*0.99995 - 0.40*0.00999)= 1.016
+                y2'= (1.02*0.00999 + 0.40*0.99995)= 0.410
+
+            Clubbing them :
+                Q2'= [-0.225,1.427,1.016,0.410]
+
+            Similarly : 
+                K2'= [-0.194,1.289,0.997,0.330]
+
+
+        #Final Rotated Vectors : 
+
+           Q1' (The, Position 0)
+        = [ 0.290,  0.560, 0.330, 0.430]
+
+           Q2' (Dog₁, Position 1)
+        = [-0.225,  1.427, 1.016, 0.410]
+
+           Q3' (Chased, Position 2)
+        = [-1.462, -0.073, 1.279, 0.546]
+
+            Q4' (Another, Position 3)
+        = [-0.651, -0.496, 0.609, 1.019]
+
+            Q5' (Dog₂, Position 4)
+        = [ 0.019, -1.445, 1.003, 0.441] Here Dog1 is Not equal to Dog 5
+
+            K1' (The, Position 0)
+        = [ 0.270,  0.540, 0.200, 0.500]
+
+            K2' (Dog₁, Position 1)
+        = [-0.194,  1.289, 0.997, 0.330]
+
+            K3' (Chased, Position 2)
+        = [-1.140,  0.039, 0.999, 0.540]
+
+            K4' (Another, Position 3)
+        = [-0.804, -0.231, 0.561, 0.957]
+
+            K5' (Dog₂, Position 4)
+        = [ 0.009, -1.304, 0.986, 0.360]  Here Dog1 is Not equal to Dog 5
+
+
+
+    5- How does simply rotating the vectors tell the Transformer where a word is ? 
+        #1- The vector length is unchanges ,only its direction changes 
+
+        #2- Imagine :
+            Position 0-> 0degree -> Position arrow : -> 
+            Position 1->57degree -> Position arrow : ↗
+            Position 2->114degree-> Position arrow : ↖
+            Position 2->171degree-> Position arrow : ←
+            Position 2->229degree-> Position arrow : ↙  
+
+        #3- Now instead of writing Dog ,Dog :
+            RoPE stores Dog1 :↗ and Dog2 : ↙
+
+        #4- How Transformer undertsand the direction : 
+            During the Attention Block : 
+                Q2' : [-0.225,  1.427, 1.016, 0.410]
+                Q5' : [ 0.019, -1.445, 1.003, 0.441]
+                K3' : [-1.140,  0.039, 0.999, 0.540]   
+                K5' : [ 0.009, -1.304, 0.986, 0.360]
+
+                Q2'*K3' = [-0.225,  1.427, 1.016, 0.410] * [-1.140,  0.039, 0.999, 0.540] = 1.55
+                Q2'*K5' = [-0.225,  1.427, 1.016, 0.410] * [ 0.009, -1.304, 0.986, 0.360] = -1.86
+                #Dog1 is more realted to chased than another Dog2
+
+                Q5'*K3' = [ 0.019, -1.445, 1.003, 0.441] * [-1.140,  0.039, 0.999, 0.540] = -1.31
+                Q5'*K5' = [ 0.019, -1.445, 1.003, 0.441] * [ 0.009, -1.304, 0.986, 0.360] = 2.15
+                #Dog2 is more realted to itself than chased 
+
+                Dog1 appears before Dog 2 , So the dotproduct Q2'*K3' should be greater than Q5'*K5' 
+
+        #5- Mathematical Intrrepretation : 
+            Dog-> Roatated by Position 1 -> Q1'
+            Chased-> Roated by Position 2 -> K3' 
+            Dot Product -> (R1Q)T * (R2K) 
+            Rearrange -> Q T * (R1T*R2)* K 
+            Identity -> R1T*R2 = R(2-1) = R(1) The two absolute rotations collapse into a single rotation whose angle is the difference in positions 
+
+        #6- Conclusion : Relative Position Instead of Absolute Position 
+            If position were 1 and 2 : R1T*R2 = R(2-1) = R(1)
+            If position were 10 and 11 : R1oT*R11  = R(11-10)= R(1) Hence Distance Between Tokens 
+
+
+         #Final Takeaway : 
+            1- In Sinusoidal Positional Encoding : 
+                #The dog chased another dog 
+                #Yesterday the dog chased another dog --> Both have different absolute positions 
+
+            2- In RoPE : 
+                #The dog chases another dog 
+                #Yesterday the dog chased another dog --> Preserved the realtionship using relative distance between tokens           
+
+            
+            
+
+
+
